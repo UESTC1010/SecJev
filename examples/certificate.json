@@ -1,0 +1,30 @@
+{
+  "state": {
+    "policy": "Reject a certificate if one of its voters voted for different blocks in the same round. Otherwise accept with at least three distinct voters; otherwise wait.",
+    "candidate": "A",
+    "round": 7,
+    "observed_votes": {
+      "v1": [
+        "A"
+      ],
+      "v2": [
+        "A",
+        "B"
+      ],
+      "v3": [
+        "A"
+      ]
+    }
+  },
+  "questions": {
+    "certificate_action": {
+      "type": "choice",
+      "instructions": "Which action follows the stated policy?",
+      "criteria": {
+        "accept": "Accept the certificate",
+        "reject": "Reject the conflicting certificate",
+        "wait": "Wait for more evidence"
+      }
+    }
+  }
+}
