@@ -1,0 +1,183 @@
+{
+  "split": "test",
+  "secjev_initialization": "Kev-0.8B",
+  "secjev_epoch": 3,
+  "task_count": 14,
+  "test_questions": 21634,
+  "macro_average_definition": "Unweighted mean of the 14 task accuracies; not source-macro or pooled class recall.",
+  "balanced_definition": "Mean semantic-class recall within each task, then unweighted mean across14tasks.",
+  "source_reports": [
+    "parent-test.json",
+    "trained-test.json"
+  ],
+  "tasks": [
+    {
+      "source": "agentdojo_tool_outputs",
+      "task": "agentdojo_boundary_action",
+      "test_questions": 426,
+      "label_zh": "AgentDojo · 信任边界动作",
+      "label_en": "AgentDojo · Trust-boundary action",
+      "kev_accuracy": 0.5187793427230047,
+      "secjev_accuracy": 0.8028169014084507,
+      "kev_balanced_accuracy": 0.5933712121212121,
+      "secjev_balanced_accuracy": 0.7803977272727273
+    },
+    {
+      "source": "agentdojo_tool_outputs",
+      "task": "agentdojo_embedded_injection",
+      "test_questions": 426,
+      "label_zh": "AgentDojo · 嵌入式提示注入",
+      "label_en": "AgentDojo · Embedded prompt injection",
+      "kev_accuracy": 0.3286384976525822,
+      "secjev_accuracy": 0.7981220657276995,
+      "kev_balanced_accuracy": 0.5629734848484849,
+      "secjev_balanced_accuracy": 0.7958333333333334
+    },
+    {
+      "source": "byzfl_mnist",
+      "task": "fl_attack_generated_update",
+      "test_questions": 800,
+      "label_zh": "ByzFL · 攻击生成的客户端更新",
+      "label_en": "ByzFL · Attack-generated client update",
+      "kev_accuracy": 0.79625,
+      "secjev_accuracy": 0.92625,
+      "kev_balanced_accuracy": 0.49765625,
+      "secjev_balanced_accuracy": 0.91875
+    },
+    {
+      "source": "ciciot2023",
+      "task": "ciciot_attack",
+      "test_questions": 6000,
+      "label_zh": "CICIoT2023 · 攻击捕获标签",
+      "label_en": "CICIoT2023 · Attack-capture label",
+      "kev_accuracy": 0.25,
+      "secjev_accuracy": 0.918,
+      "kev_balanced_accuracy": 0.5,
+      "secjev_balanced_accuracy": 0.8806666666666667
+    },
+    {
+      "source": "injecagent",
+      "task": "injecagent_requested_operation_v13",
+      "test_questions": 124,
+      "label_zh": "InjecAgent · 注入请求的操作类别",
+      "label_en": "InjecAgent · Requested operation",
+      "kev_accuracy": 0.4435483870967742,
+      "secjev_accuracy": 1.0,
+      "kev_balanced_accuracy": 0.5071428571428571,
+      "secjev_balanced_accuracy": 1.0
+    },
+    {
+      "source": "lanl_auth_policy",
+      "task": "lanl_known_logon_action_v16",
+      "test_questions": 540,
+      "label_zh": "LANL · 登录策略分流",
+      "label_en": "LANL · Logon policy triage",
+      "kev_accuracy": 0.7240740740740741,
+      "secjev_accuracy": 0.9888888888888889,
+      "kev_balanced_accuracy": 0.6610169491525424,
+      "secjev_balanced_accuracy": 0.9858372727622123
+    },
+    {
+      "source": "lanl_auth_policy",
+      "task": "lanl_observable_policy",
+      "test_questions": 540,
+      "label_zh": "LANL · 历史失败次数阈值",
+      "label_en": "LANL · Prior-failure threshold",
+      "kev_accuracy": 0.8074074074074075,
+      "secjev_accuracy": 0.9981481481481481,
+      "kev_balanced_accuracy": 0.8725490196078431,
+      "secjev_balanced_accuracy": 0.9987745098039216
+    },
+    {
+      "source": "ton_iot_network",
+      "task": "ton_attack",
+      "test_questions": 3500,
+      "label_zh": "ToN-IoT · 连接攻击标签",
+      "label_en": "ToN-IoT · Connection attack label",
+      "kev_accuracy": 0.25,
+      "secjev_accuracy": 0.9802857142857143,
+      "kev_balanced_accuracy": 0.5,
+      "secjev_balanced_accuracy": 0.9700952380952381
+    },
+    {
+      "source": "twins_streamlet",
+      "task": "twins_evidence_level",
+      "test_questions": 659,
+      "label_zh": "Twins/Streamlet · 证据等级",
+      "label_en": "Twins/Streamlet · Evidence level",
+      "kev_accuracy": 0.41122913505311076,
+      "secjev_accuracy": 0.9878603945371776,
+      "kev_balanced_accuracy": 0.3803654468520359,
+      "secjev_balanced_accuracy": 0.9866245418511701
+    },
+    {
+      "source": "twins_streamlet",
+      "task": "twins_policy_action",
+      "test_questions": 659,
+      "label_zh": "Twins/Streamlet · 证书策略动作",
+      "label_en": "Twins/Streamlet · Certificate policy action",
+      "kev_accuracy": 0.4764795144157815,
+      "secjev_accuracy": 0.9848254931714719,
+      "kev_balanced_accuracy": 0.4734849960396297,
+      "secjev_balanced_accuracy": 0.9832744580990762
+    },
+    {
+      "source": "twins_streamlet",
+      "task": "twins_quorum",
+      "test_questions": 659,
+      "label_zh": "Twins/Streamlet · 法定票数",
+      "label_en": "Twins/Streamlet · Quorum",
+      "kev_accuracy": 0.5341426403641881,
+      "secjev_accuracy": 0.9969650986342944,
+      "kev_balanced_accuracy": 0.46693313222724986,
+      "secjev_balanced_accuracy": 0.9976470588235293
+    },
+    {
+      "source": "twins_streamlet",
+      "task": "twins_visible_conflict",
+      "test_questions": 659,
+      "label_zh": "Twins/Streamlet · 可见投票冲突",
+      "label_en": "Twins/Streamlet · Observed vote conflict",
+      "kev_accuracy": 0.6403641881638846,
+      "secjev_accuracy": 0.992412746585736,
+      "kev_balanced_accuracy": 0.645450076469303,
+      "secjev_balanced_accuracy": 0.9874371859296482
+    },
+    {
+      "source": "veremi_nextgen",
+      "task": "veremi_message_manipulation",
+      "test_questions": 3321,
+      "label_zh": "VeReMi · 消息操纵标签",
+      "label_en": "VeReMi · Message-manipulation label",
+      "kev_accuracy": 0.47756699789220114,
+      "secjev_accuracy": 0.6311352002408913,
+      "kev_balanced_accuracy": 0.5,
+      "secjev_balanced_accuracy": 0.6354946560502379
+    },
+    {
+      "source": "veremi_nextgen",
+      "task": "veremi_supported_attack_type_v16",
+      "test_questions": 3321,
+      "label_zh": "VeReMi · 十类攻击/正常标签",
+      "label_en": "VeReMi · Ten-way attack/normal label",
+      "kev_accuracy": 0.47244805781391147,
+      "secjev_accuracy": 0.6413730803974707,
+      "kev_balanced_accuracy": 0.0989281210592686,
+      "secjev_balanced_accuracy": 0.39881842041600335
+    }
+  ],
+  "summary": {
+    "Kev-0.8B": {
+      "accuracy": 0.4053341961726911,
+      "macro_task_accuracy": 0.5093520173326371,
+      "macro_task_balanced_accuracy": 0.518562253251459,
+      "ece15": 0.1706980532912193
+    },
+    "SecJev-0.8B": {
+      "accuracy": 0.8503281871128778,
+      "macro_task_accuracy": 0.9033631237161389,
+      "macro_task_balanced_accuracy": 0.8799750763645546,
+      "ece15": 0.03337237159720989
+    }
+  }
+}

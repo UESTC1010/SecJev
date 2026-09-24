@@ -1,0 +1,134 @@
+{
+  "pass": true,
+  "max_probability_difference": 0.00025399999910924453,
+  "tolerance": 0.001,
+  "temperature": 1.3525612043415394,
+  "adapter_bytes_unchanged": true,
+  "head_tensors_unchanged": true,
+  "comparison": "Public export full requests versus frozen evaluation isolated-question FP32 logits",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "dtype": "FP32",
+  "adapter": "unmerged",
+  "latency_scope": "Five warm forward passes per selected calibration scene; excludes load and tokenization; no other SecJev inference on the same GPU",
+  "scenes": [
+    {
+      "calibration_scene": 638,
+      "questions": 4,
+      "max_question_row_tokens": 521,
+      "request_packed_tokens": 618,
+      "forward_ms": [
+        196.33503863587976,
+        196.38406997546554,
+        195.69826172664762,
+        195.3052352182567,
+        197.68855907022953
+      ],
+      "median_ms": 196.33503863587976,
+      "max_ms": 197.68855907022953,
+      "peak_allocated_mib": 3332.52880859375,
+      "peak_reserved_mib": 3768.0
+    },
+    {
+      "calibration_scene": 4606,
+      "questions": 2,
+      "max_question_row_tokens": 149,
+      "request_packed_tokens": 173,
+      "forward_ms": [
+        76.61809725686908,
+        75.85742184892297,
+        76.48142706602812,
+        76.50883635506034,
+        76.37513894587755
+      ],
+      "median_ms": 76.48142706602812,
+      "max_ms": 76.61809725686908,
+      "peak_allocated_mib": 3012.7734375,
+      "peak_reserved_mib": 3768.0
+    },
+    {
+      "calibration_scene": 5513,
+      "questions": 2,
+      "max_question_row_tokens": 2432,
+      "request_packed_tokens": 2457,
+      "forward_ms": [
+        477.19521215185523,
+        469.4426069036126,
+        473.79006491973996,
+        471.1955417878926,
+        472.4505329504609
+      ],
+      "median_ms": 472.4505329504609,
+      "max_ms": 477.19521215185523,
+      "peak_allocated_mib": 4198.97998046875,
+      "peak_reserved_mib": 4530.0
+    },
+    {
+      "calibration_scene": 6332,
+      "questions": 4,
+      "max_question_row_tokens": 252,
+      "request_packed_tokens": 349,
+      "forward_ms": [
+        99.6938431635499,
+        99.4759970344603,
+        99.63812585920095,
+        99.98328797519207,
+        99.603156093508
+      ],
+      "median_ms": 99.63812585920095,
+      "max_ms": 99.98328797519207,
+      "peak_allocated_mib": 3160.63037109375,
+      "peak_reserved_mib": 4530.0
+    },
+    {
+      "calibration_scene": 8028,
+      "questions": 4,
+      "max_question_row_tokens": 1404,
+      "request_packed_tokens": 1501,
+      "forward_ms": [
+        523.1780898757279,
+        524.361704941839,
+        523.7126112915576,
+        524.9002021737397,
+        524.556967895478
+      ],
+      "median_ms": 524.361704941839,
+      "max_ms": 524.9002021737397,
+      "peak_allocated_mib": 4000.56787109375,
+      "peak_reserved_mib": 4530.0
+    },
+    {
+      "calibration_scene": 8049,
+      "questions": 1,
+      "max_question_row_tokens": 452,
+      "request_packed_tokens": 452,
+      "forward_ms": [
+        74.0881566889584,
+        73.50295316427946,
+        72.38546991720796,
+        75.7337873801589,
+        75.11454215273261
+      ],
+      "median_ms": 74.0881566889584,
+      "max_ms": 75.7337873801589,
+      "peak_allocated_mib": 3016.7890625,
+      "peak_reserved_mib": 4530.0
+    },
+    {
+      "calibration_scene": 8106,
+      "questions": 2,
+      "max_question_row_tokens": 1053,
+      "request_packed_tokens": 1100,
+      "forward_ms": [
+        203.61678395420313,
+        204.13678186014295,
+        206.25961106270552,
+        205.93228470534086,
+        204.3660869821906
+      ],
+      "median_ms": 204.3660869821906,
+      "max_ms": 206.25961106270552,
+      "peak_allocated_mib": 3297.12841796875,
+      "peak_reserved_mib": 4530.0
+    }
+  ]
+}
