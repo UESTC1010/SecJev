@@ -1,0 +1,11 @@
+{
+  "model": "SecJev-0.8B",
+  "model_status": "trained_evaluated_export_verified",
+  "selected_epoch": 3,
+  "test_questions": 21634,
+  "test_accuracy": 0.8503281871128778,
+  "corpus": "SecJev-Corpus",
+  "corpus_version": "1.0.0",
+  "corpus_status": "packaged_and_verified",
+  "published": false
+}

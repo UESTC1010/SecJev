@@ -1,201 +1,112 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+SecJev Use and Distribution Agreement
+Version 1.0 — 23 September 2026
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+Copyright (c) 2026 the respective SecJev contributors, for their original
+contributions only.
 
-   1. Definitions.
+1. Scope and rights holders
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+This agreement covers the original SecJev contributions in releases that
+expressly reference it: code, documentation, dataset compilation and original
+annotations, and model adaptations, only to the extent the relevant contributor
+holds rights that can be licensed. It does not claim ownership of upstream
+datasets, model weights, software, individual facts or public-domain material.
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+Third-party components and source-derived records retain their own applicable
+terms. Consult SOURCES.md, UPSTREAM.md and THIRD_PARTY_NOTICES.md where supplied,
+the licenses/ directory, and record-level provenance. Inclusion in a SecJev
+release does not turn third-party material into material licensed solely under
+this agreement. This agreement does not withdraw permissions validly granted
+for earlier releases under another license.
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+2. Permission for original SecJev contributions
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+Subject to this agreement, each contributor grants a worldwide, non-exclusive,
+royalty-free copyright license to use, copy, study, modify and distribute that
+contributor's covered contributions, including for research, education,
+evaluation, training, fine-tuning and distillation. This grant does not itself
+prohibit commercial use of those contributions; section 4 governs uses that
+also involve upstream rights or conditions. Permissions remain available for
+the duration of the licensed rights while the applicable conditions are met.
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+3. Attribution, modifications and redistribution
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+When distributing covered contributions or modifications, retain this agreement,
+applicable copyright and attribution notices, source references and required
+third-party license texts. Identify the SecJev release used, describe material
+changes, and distinguish modified releases from the original project. Preserve
+source-to-record mappings, or provide an equivalent usable provenance mapping,
+when distributing source-derived data.
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+Redistribute upstream material only to the extent its own terms or a separate
+authorization permit. If permission for a particular act of redistribution is
+unclear, this agreement does not supply that permission; obtain clarification
+or distribute acquisition/transformation instructions instead of that material.
+Do not represent this agreement as removing upstream conditions. Do not impose
+restrictions on a recipient's independent rights in third-party or public-domain
+material. Derivatives may carry additional terms for new contributions only
+where those terms respect the existing rights and obligations.
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+4. Source-specific conditions and commercial use
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+The complete corpus has multiple sources and no blanket unrestricted commercial
+clearance. In particular:
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+- ToN-IoT's official terms grant academic research use and require permission
+  from its author for commercial use. This agreement grants neither that
+  permission nor a broader redistribution right on the author's behalf.
+- CIC requires dataset and paper attribution for its permitted redistribution.
+- VeReMi material licensed under CC BY 4.0 retains attribution, change-notice
+  and other requirements of that license, and its independently granted rights.
+- LANL material covered by a public-domain dedication remains public domain.
+- MIT- and Apache-licensed upstream software and model components retain their
+  license texts and applicable notices; simulator licenses must not be assumed
+  to determine every right in their outputs or input datasets.
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+The source-specific register gives details and links to the original terms.
+Where a proposed use requires additional authorization, obtain it from each
+relevant rights holder. SecJev contributors cannot grant upstream permissions.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+Training on data does not, by this agreement alone, automatically assign the
+data's license to every resulting weight or output, or establish that every
+such weight or output is cleared for commercial use. Model releases must identify
+their upstream components and training sources. Users must assess the terms
+applicable to their actual data use, model use and redistribution. This agreement
+does not assert that ordinary model outputs are owned by SecJev or must carry
+this agreement merely because the model produced them.
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+5. Priority and reserved rights
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+Upstream terms govern upstream material; this agreement governs only the rights
+granted by SecJev contributors. It must not be read to narrow CC BY, MIT, Apache,
+CC0 or other independently granted upstream permissions. Statutory exceptions
+and uses that require no permission remain unaffected. No trademark rights or
+right to imply endorsement are granted. No additional patent license is granted
+here; independently applicable upstream patent grants remain unaffected.
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+6. No warranties; responsibility for use
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+To the extent permitted by applicable law, covered contributions are supplied
+as available without warranties, including as to accuracy, fitness for purpose
+or non-infringement. Contributors are not liable for losses arising from their
+use to the extent such liability may lawfully be excluded. This agreement does
+not exclude rights or liabilities that applicable law makes non-excludable.
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+7. Noncompliance
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+Permissions under this agreement terminate for a use that violates its
+conditions. They are reinstated when the violation is remedied within 30 days
+of the user's discovery, or with the relevant contributor's written permission.
+This does not change upstream licenses or remedies available under applicable
+law. A legally ineffective provision does not invalidate the remainder where
+the remainder can operate consistently with this agreement's scope.
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+8. Versions and inquiries
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+This version applies to releases that expressly adopt it. Later versions do not
+automatically change the terms of existing copies. The accompanying Chinese
+translation is for convenience; this English text controls in a discrepancy.
+Project inquiries: https://github.com/UESTC1010/SecJev/issues
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
-
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
-
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
-
-   END OF TERMS AND CONDITIONS
-
-   APPENDIX: How to apply the Apache License to your work.
-
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
-
-   Copyright [yyyy] [name of copyright owner]
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+This is a project-specific agreement, not a claim of OSI approval or a substitute
+for permissions that only upstream rights holders can grant.

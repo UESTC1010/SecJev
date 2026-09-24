@@ -1,0 +1,11 @@
+torch==2.6.0
+transformers==5.17.0
+peft==0.21.0
+triton==3.2.0; sys_platform == "linux"
+flash-linear-attention==0.4.2
+fla-core==0.4.2
+accelerate
+datasets
+pydantic>=2.9
+huggingface-hub
+safetensors
