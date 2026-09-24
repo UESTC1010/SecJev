@@ -1,0 +1,21 @@
+{
+  "purpose": "user-requested retrospective audit of development checkpoint selection",
+  "selected_epoch_before_audit": 3,
+  "candidate_epochs": [
+    1,
+    2,
+    3
+  ],
+  "selection_rule": "maximum full-development macro-task semantic-class balanced accuracy; tie: minimum macro-task raw NLL; then earlier epoch",
+  "test_questions": 21634,
+  "calibration": "each checkpoint gets its own temperature fitted only on calibration; never test",
+  "inference": "same FP32 unmerged SDPA reference path, TF32 disabled, same three-way shards",
+  "reuse": [
+    "epoch1 calibration/development",
+    "epoch2 development",
+    "epoch3 calibration/development/test"
+  ],
+  "will_reselect_or_update_release": false,
+  "test_comparison_is_posthoc": true,
+  "created_unix": 1790212035.9757123
+}
