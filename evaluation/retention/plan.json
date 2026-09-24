@@ -1,0 +1,60 @@
+{
+  "source_commit": "90990a5fac2995b9faa3190f7d437e84f2067768",
+  "models": {
+    "Kev-0.8B": {
+      "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "provenance.json": "a42b6099fb1a4103ce7b2db5329db4bc3b9afb7517380c441d954cd2ee3f3c66",
+      "adapter_model.safetensors": "c81d5716f0af7622d8d2b97013c333d48263ca01113f9a7cf4526e96f6ac0b26",
+      "hub-metadata.json": "261fcb75854154b18a5f2434793c7622a6b878a31e85fa8e9cbd4f0154be8100",
+      "tokenizer_config.json": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45",
+      "head.pt": "39f4343ccccc65e583bbfff0de0e11bfedb849fcfaaf94b50ac4f2b73bc79c65",
+      "README.md": "35c559a75e4907f60f702fd05101b69db85ac4dd2e86ab3b9367d02bdb2df3a0",
+      "download-provenance.json": "725741378751fbb587f5943c74e2c3f4a02e916dc7be70fd068b56d1b4603310",
+      "result.json": "a0464a949550172f6443e79a2f1ac30239b2f9ff431c6026824ad4b69f69cd9d",
+      "training_config.json": "c7d54ce956bda4e3b4d822883f11f33a37f66255c6aaac03ca90c3bc6b6b6aac",
+      "training_metrics.json": "b083c763fc4d63e908bf11cc2a2f1038737e368752c819ac17f2bbbec7ba567c",
+      "inference-provenance.json": "89ef5576a222064dd451dcd04c7b8b9e4c737865717a1f8582f9ea003f15f342",
+      "adapter_config.json": "748acb2cda88454cb1ba69d745ba336f3fcb5486eac349e90960c8b8d8d3e854"
+    },
+    "SecJev-0.8B": {
+      "chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+      "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "adapter_model.safetensors": "365341166b0b38186dc6e336b0749c8ade15a67fc9262c6f9aeb1c6241adbef6",
+      "tokenizer_config.json": "353c083805d863719e54973335a38e252a92e1ac64d32b83bb0b333cc1644ef2",
+      "head.pt": "17757f31b349a5c9a93275a11d724ed94af83203b53ad42c6aa1ff0758c5b8fd",
+      "README.md": "c9c4c23c4d39da837e3df5b433c06606ae96d265e817e109df1ed41400f27e33",
+      "adapter_config.json": "060a0f27949a5fdbef293f102f24f8e9573c6e57889cd48976798d04288f5a46"
+    }
+  },
+  "parent_hub_revision": "54f4f8777356cd5bbbb6c6919c657f26e6f2f6d8",
+  "backbone_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+  "protocol": "Unmodified official LocalPredictor forward, evaluate_records and metrics; FP32 unmerged SDPA; TF32/fused SDPA off; original strict context; no date facts; as-shipped temperatures; raw metrics recovered analytically; no fitting or training.",
+  "script_sha256": "9a074151d7a80a3196c7469376db2d4d523c4e6ee550776fcb409551d9797fd4",
+  "suites": {
+    "decision-v7": {
+      "manifest_sha256": "a8f50e481b7d90b97da049e0ff6a01cee2f1ed204aed61a8265af0edbb5514d2",
+      "test_sha256": "cd7d129a84232e0c7a4e92b4840a6dfe14c8bb93c5d1904b526fa8c085325d2d",
+      "records": 1176,
+      "questions": 1440,
+      "variants": {
+        "clean": 960,
+        "none_present": 72,
+        "none_absent": 72,
+        "permuted": 72
+      }
+    },
+    "transfer-v4": {
+      "manifest_sha256": "31677c2256b406222e7d94ffdc0a02a70ce05746b9efe307876024c4e77291d1",
+      "test_sha256": "c30a91274f9b483aac9e4f02ada5dea953b3f1a2829456e0bc07806c4e73b517",
+      "records": 764,
+      "questions": 764,
+      "variants": {
+        "clean": 656,
+        "none_present": 36,
+        "none_absent": 36,
+        "permuted": 36
+      }
+    }
+  },
+  "started_unix": 1790214877.2012913
+}
