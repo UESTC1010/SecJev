@@ -2,11 +2,18 @@
 
 The checkpoint contains a trained LoRA adapter, pointer decision head, calibration temperature and tokenizer files. The pinned **Qwen3.5-0.8B-Base** backbone is loaded separately. This is an adapter release, not a standalone copy of all backbone weights.
 
-Use the environment and pinned upstream source prepared in [TRAINING.md](TRAINING.md). Download the released checkpoint to a local directory, then run:
+Install the dependencies, prepare the pinned backbone and Kev source, and unpack the model:
 
 ```bash
-python infer.py --model /path/to/SecJev-0.8B --request examples/certificate.json --device cuda
+python -m pip install -r requirements.txt
+export SECJEV_WORK="$PWD/secjev-work"
+python training/bootstrap.py --inference-only
+curl -L --fail -o SecJev-0.8B-v1.0.0.tar.gz https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz
+tar -xzf SecJev-0.8B-v1.0.0.tar.gz
+python infer.py --model ./SecJev-0.8B --base "$SECJEV_WORK/base" --request examples/certificate.json --device cuda
 ```
+
+The inference setup downloads the pinned Qwen backbone and Kev source; it does not download the training corpus or original Kev adapter. GPU use requires a compatible CUDA PyTorch installation. The release archive contains the adapter and head, so its size is smaller than the full 0.8B backbone.
 
 For an already downloaded backbone, add `--base /path/to/Qwen3.5-0.8B-Base`. CPU execution is also selectable with `--device cpu`; GPU evaluation results do not imply measured CPU latency.
 

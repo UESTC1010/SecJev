@@ -7,5 +7,6 @@
   "corpus": "SecJev-Corpus",
   "corpus_version": "1.0.0",
   "corpus_status": "packaged_and_verified",
-  "published": false
+  "published": true,
+  "release_url": "https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0"
 }

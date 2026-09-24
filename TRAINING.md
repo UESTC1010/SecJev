@@ -67,7 +67,21 @@ The small 56-question monitoring panel is only a training diagnostic. It does no
 
 After selection and calibration, the candidate files are frozen. Only then are the 21,634 test questions evaluated against both the original Kev-0.8B baseline and the selected model. Test scores do not choose a checkpoint. Three-way inference sharding distributes independent question rows; candidate probabilities and labels are merged by original scene/question identifiers.
 
-The actual continuation scripts and immutable recipe are retained with the run and will accompany the completed release. The standalone one-epoch scripts above describe the initial phase, not the complete selected model's recipe.
+The complete continuation, selection, calibration, test and export workflow is included in `training/pipeline_continue.py`. After the initial one-epoch training command finishes, run:
+
+```bash
+# Evaluate the initial checkpoint and baseline on calibration/development only.
+CUDA_VISIBLE_DEVICES=0 python training/evaluate.py --model parent
+CUDA_VISIBLE_DEVICES=0 python training/evaluate.py --model trained
+# Continue for epochs 2 and 3; select, calibrate, freeze, test and export.
+CUDA_VISIBLE_DEVICES=0,1,2 python training/pipeline_continue.py
+```
+
+Choose three idle GPUs and replace the device IDs as needed. The controller honors the order in `CUDA_VISIBLE_DEVICES`. Use a fresh `SECJEV_WORK` directory for each complete run. Do not run the legacy one-epoch `freeze.py` or prepare the test split before this controller: it freezes the selected three-epoch candidate itself.
+
+Epochs 2 and 3 are saved under `$SECJEV_WORK/continuation/runs/secjev-0.8b-3epochs/`. The portable selected checkpoint is exported to `$SECJEV_WORK/continuation/release/SecJev-0.8B/`; reports and logs are under `continuation/results/` and `continuation/logs/`.
+
+`train_continue.py` contains the measured two-epoch continuation, `infer_shard.py` performs FP32 evaluation, and `finish_release.py` exports weights and verifies serving probabilities. The released scripts replace the original container mount paths with `SECJEV_WORK`; the training objective, batches, optimizer schedule and selection rule are unchanged. The original training and export were run on GPUs; the path-portable packaging was syntax-checked and its batch coverage and loss normalization checked on CPU, without rerunning all three epochs.
 
 Evaluation uses FP32, unmerged adapters, TF32 disabled and calibrated probabilities. It reports micro accuracy, per-task accuracy, semantic-class balanced accuracy, NLL, Brier score, ECE, high-confidence coverage/error, and ordinal expected-level error. Shuffled option positions are not treated as semantic classes.
 

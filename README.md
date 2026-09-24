@@ -12,13 +12,19 @@ Give SecJev a log, a tool response, or a set of votes, along with the question y
 
 The current **SecJev-0.8B** is fine-tuned from Kev-0.8B on the Qwen3.5-0.8B-Base backbone. We train it on **SecJev-Corpus**, a dataset covering prompt injection, network attack labels, federated learning, consensus protocols, authentication logs, and vehicle messages.
 
-We plan to release the weights, training and inference code, and SecJev-Corpus together. The 0.8B model and corpus are ready; uploads are pending.
+SecJev-0.8B, SecJev-Corpus and the training/inference code are available in [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0).
+
+| Download | Contents |
+|---|---|
+| [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | Trained LoRA weights, decision head, calibration and tokenizer |
+| [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | All 170,185 questions, four splits and source metadata |
+| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-code-v1.0.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
 
 ## Models
 
 | Model | Size | Status |
 |---|---:|---|
-| **SecJev-0.8B** | 0.8B | Trained and tested; upload pending |
+| **SecJev-0.8B** | 0.8B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
 | SecJev-2B | 2B | Planned |
 | SecJev-4B | 4B | Planned |
 | SecJev-9B | 9B | Planned |
@@ -159,7 +165,6 @@ Accuracy was nearly unchanged on decision-v7 and fell by 2.44 percentage points 
 
 ## Next steps
 
-- Publish SecJev-0.8B and SecJev-Corpus.
 - Train and evaluate the 2B, 4B, 9B, and 27B models.
 - Add inference speed, memory measurements, and deployment instructions.
 

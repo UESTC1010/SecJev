@@ -12,13 +12,19 @@
 
 目前的 **SecJev-0.8B** 从 Kev-0.8B 微调而来，底座是 Qwen3.5-0.8B-Base。训练使用我们整理的 **SecJev-Corpus**，包含提示注入、网络攻击标签、联邦学习、共识协议、认证日志和车联网消息等任务。
 
-我们计划一起发布模型权重、训练与推理代码，以及 SecJev-Corpus。目前 0.8B 模型和语料已准备好，正在安排上传。
+模型、数据和代码已发布在 [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0)。
+
+| 下载 | 内容 |
+|---|---|
+| [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和分词器 |
+| [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | 全部 170,185 道题、四个数据划分和来源信息 |
+| [代码](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-code-v1.0.0.tar.gz) | 推理、三轮训练、检查点选择、校准和评估 |
 
 ## 模型
 
 | 模型 | 参数规模 | 状态 |
 |---|---:|---|
-| **SecJev-0.8B** | 0.8B | 已完成训练和测试，待上传 |
+| **SecJev-0.8B** | 0.8B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
 | SecJev-2B | 2B | 计划中 |
 | SecJev-4B | 4B | 计划中 |
 | SecJev-9B | 9B | 计划中 |
@@ -159,7 +165,6 @@ VeReMi 的两项任务目前表现较弱，十类标签识别的平衡准确率�
 
 ## 接下来
 
-- 发布 SecJev-0.8B 和 SecJev-Corpus。
 - 训练并评测 2B、4B、9B、27B 版本。
 - 补充推理速度、显存占用和部署说明。
 
