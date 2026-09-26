@@ -5,7 +5,7 @@ The SecJev Use and Distribution Agreement applies only to the rights held by Sec
 | Component | Attribution | Applicable terms |
 |---|---|---|
 | Kev source and initial Kev-0.8B adapter/head | Jared Palmer and Kev contributors | Apache-2.0; see licenses/Apache-2.0.txt and UPSTREAM.md |
-| Qwen3.5-0.8B-Base backbone | Qwen team / Alibaba and applicable contributors | Apache-2.0; see licenses/Apache-2.0.txt and UPSTREAM.md |
+| Qwen3.5-0.8B-Base and Qwen3.5-2B-Base backbones | Qwen team / Alibaba and applicable contributors | Apache-2.0; see licenses/Apache-2.0.txt and UPSTREAM.md |
 | Twins / Streamlet simulator | Twins simulator contributors | licenses/Twins-LICENSE.txt |
 | ByzFL | EPFL and ByzFL contributors | licenses/ByzFL-LICENSE.txt |
 | FoolsGold | FoolsGold contributors | licenses/FoolsGold-LICENSE.txt |
@@ -16,3 +16,5 @@ The SecJev Use and Distribution Agreement applies only to the rights held by Sec
 | CICIoT2023 and ToN-IoT data | Authors listed in SOURCES.md | Official source-specific conditions linked in SOURCES.md |
 
 SecJev modifies the Kev adapter and decision head by security fine-tuning and probability calibration. The backbone is an upstream dependency. SecJev-Corpus transformations and newly generated experiments are described in SOURCES.md; using a simulator does not imply its software license automatically covers every output or input dataset. Full data attribution and required publications are retained in SOURCES.md.
+
+SecJev-2B trains its own LoRA/head from the pinned Qwen2B backbone with Kev's decision recipe before security adaptation; the initial Kev-0.8B adapter applies only to the 0.8B model. Kev general training source records retain their upstream attribution and conditions.

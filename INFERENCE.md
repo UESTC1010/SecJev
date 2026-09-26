@@ -31,3 +31,19 @@ Output includes:
 The default reference path is FP32 with the adapter unmerged. Every state-plus-question row must fit within 8,192 tokens; oversized inputs raise an error. The corpus's observed maximum is approximately 3,588 tokens, so the configured limit is not evidence of tested quality throughout an 8K context.
 
 Compatibility refers to request/response structure and Kev conventions, not identical Jev internals, confidence formulas or predictions. Probability calibration is evaluated on this corpus; deployment on a new distribution needs its own evaluation.
+
+## SecJev-2B
+
+The 2B release uses the same request format and `infer.py`. Download the model package and use its included bootstrap to obtain the exact backbone and Kev code:
+
+```bash
+curl -L --fail -o SecJev-2B-v1.1.0.tar.gz https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz
+tar -xzf SecJev-2B-v1.1.0.tar.gz
+export SECJEV_WORK="$PWD/secjev-2b-work"
+python SecJev-2B/bootstrap.py --inference-only
+python SecJev-2B/infer.py --model ./SecJev-2B --base "$SECJEV_WORK/base" --request SecJev-2B/examples/certificate.json --device cuda
+```
+
+Install `requirements.txt` first. Use `--device cpu` for CPU inference. The archive contains actual trained LoRA weights and a decision head, not the multi-gigabyte Qwen backbone. Bootstrap downloads `Qwen/Qwen3.5-2B-Base` at revision `b1485b2fa6dfa1287294f269f5fb618e03d52d7c`. The released temperature (1.2923921937) is applied automatically. No training dataset is required for inference.
+
+For the hand-written certificate example, the released 2B checkpoint returned `accept` in the CPU smoke test, although the stated policy requires `reject`. The package includes the actual `example-output.json`. This example demonstrates the request format; use the per-task evaluation to assess model performance.

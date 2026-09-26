@@ -10,22 +10,23 @@
 
 给模型一段日志、一份工具响应或一组投票记录，再告诉它要判断什么。SecJev 会为候选答案打分，返回判断、选项或等级，以及相应的概率。
 
-目前的 **SecJev-0.8B** 从 Kev-0.8B 微调而来，底座是 Qwen3.5-0.8B-Base。训练使用我们整理的 **SecJev-Corpus**，包含提示注入、网络攻击标签、联邦学习、共识协议、认证日志和车联网消息等任务。
+**SecJev-0.8B** 从 Kev-0.8B 微调而来。**SecJev-2B** 先从 Qwen3.5-2B-Base 学习 Kev 的通用决策任务，再进行同样的三轮安全领域训练。训练使用我们整理的 **SecJev-Corpus**，包含提示注入、网络攻击标签、联邦学习、共识协议、认证日志和车联网消息等任务。
 
-模型、数据和代码已发布在 [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0)。
+SecJev-2B 已发布在 [v1.1.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0)。0.8B 模型和原版数据集继续保留在 [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0)。
 
 | 下载 | 内容 |
 |---|---|
 | [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和分词器 |
+| [SecJev-2B](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和推理入口 |
 | [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | 全部 170,185 道题、四个数据划分和来源信息 |
-| [代码](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-code-v1.0.0.tar.gz) | 推理、三轮训练、检查点选择、校准和评估 |
+| [代码](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-code-v1.1.0.tar.gz) | 推理、三轮训练、检查点选择、校准和评估 |
 
 ## 模型
 
 | 模型 | 参数规模 | 状态 |
 |---|---:|---|
 | **SecJev-0.8B** | 0.8B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
-| SecJev-2B | 2B | 计划中 |
+| **SecJev-2B** | 2B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0) |
 | SecJev-4B | 4B | 计划中 |
 | SecJev-9B | 9B | 计划中 |
 | SecJev-27B | 27B | 计划中 |
@@ -163,9 +164,21 @@ VeReMi 的两项任务目前表现较弱，十类标签识别的平衡准确率�
 
 常见任务准确率基本持平，跨领域下降了 2.44 个百分点。跨领域的概率校准也变差了：使用各自现有的温度参数，ECE 从 **2.56% 升至 21.10%**。这意味着模型在这些任务上更容易过度自信。完整结果见[通用能力测试](evaluation/retention/README.zh-CN.md)。这里的 ECE 使用 10 个区间，安全测试表使用 15 个区间。
 
+### SecJev-2B
+
+2B 使用相同的 SecJev-Corpus 划分，验证集选中第 3 轮，三个 checkpoint 均已测试。它先从 Qwen3.5-2B-Base 按 Kev 的方法和数据训练通用决策能力，再进行三轮安全领域训练；本次没有使用官方 Kev-2B 权重。
+
+| 模型 | 总准确率 | 任务宏平均准确率 | 任务宏平均平衡准确率 |
+|---|---:|---:|---:|
+| SecJev-0.8B | 85.03% | 90.34% | 88.00% |
+| **SecJev-2B** | **86.48%** | **92.98%** | **90.31%** |
+
+在原始 Kev 通用测试的 clean 子集上，2B 的 decision-v7 准确率为 **84.50%**，transfer-v4 为 **75.91%**。详见 [14 项任务与三轮 checkpoint 的结果](evaluation/secjev2b/README.zh-CN.md)、[2B 训练方法](training/secjev2b/README.md)和[推理说明](INFERENCE.md#secjev-2b)。
+
+
 ## 接下来
 
-- 训练并评测 2B、4B、9B、27B 版本。
+- 训练并评测 4B、9B、27B 版本。
 - 补充推理速度、显存占用和部署说明。
 
 ## 致谢

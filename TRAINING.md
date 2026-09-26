@@ -86,3 +86,7 @@ Epochs 2 and 3 are saved under `$SECJEV_WORK/continuation/runs/secjev-0.8b-3epoc
 Evaluation uses FP32, unmerged adapters, TF32 disabled and calibrated probabilities. It reports micro accuracy, per-task accuracy, semantic-class balanced accuracy, NLL, Brier score, ECE, high-confidence coverage/error, and ordinal expected-level error. Shuffled option positions are not treated as semantic classes.
 
 The corpus splits were inspected during construction, so this is a held-out research evaluation rather than a blind external benchmark. General-domain retention is not measured by this recipe.
+
+## SecJev-2B
+
+The 2B model uses its own Kev-style general-decision stage followed by the same three-epoch security recipe. See [training/secjev2b](training/secjev2b/README.md) for the pinned inputs, runnable commands and nine-GPU evaluation.

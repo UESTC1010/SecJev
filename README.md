@@ -10,22 +10,23 @@
 
 Give SecJev a log, a tool response, or a set of votes, along with the question you want answered. It scores the candidate answers and returns a judgment, a choice, or a rating with probabilities.
 
-The current **SecJev-0.8B** is fine-tuned from Kev-0.8B on the Qwen3.5-0.8B-Base backbone. We train it on **SecJev-Corpus**, a dataset covering prompt injection, network attack labels, federated learning, consensus protocols, authentication logs, and vehicle messages.
+**SecJev-0.8B** is fine-tuned from Kev-0.8B. **SecJev-2B** starts from Qwen3.5-2B-Base, learns the Kev decision task, then receives the same three-epoch security adaptation. We train it on **SecJev-Corpus**, a dataset covering prompt injection, network attack labels, federated learning, consensus protocols, authentication logs, and vehicle messages.
 
-SecJev-0.8B, SecJev-Corpus and the training/inference code are available in [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0).
+SecJev-2B is available in [v1.1.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0). The 0.8B model and unchanged corpus remain available in [v1.0.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0).
 
 | Download | Contents |
 |---|---|
 | [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | Trained LoRA weights, decision head, calibration and tokenizer |
+| [SecJev-2B](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
 | [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | All 170,185 questions, four splits and source metadata |
-| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-code-v1.0.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
+| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-code-v1.1.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
 
 ## Models
 
 | Model | Size | Status |
 |---|---:|---|
 | **SecJev-0.8B** | 0.8B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
-| SecJev-2B | 2B | Planned |
+| **SecJev-2B** | 2B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0) |
 | SecJev-4B | 4B | Planned |
 | SecJev-9B | 9B | Planned |
 | SecJev-27B | 27B | Planned |
@@ -163,9 +164,20 @@ We also tested both models on the official Kev suites:
 
 Accuracy was nearly unchanged on decision-v7 and fell by 2.44 percentage points on transfer-v4. Transfer calibration also worsened: with each model's stored temperature, ECE rose from **2.56% to 21.10%**. The fine-tuned model is more prone to overconfidence on these tasks. See the [retention evaluation](evaluation/retention/README.md) for details. These ECE values use 10 bins; the security table uses 15.
 
+### SecJev-2B
+
+The 2B release uses the same SecJev-Corpus split. Epoch 3 was selected on development; all three checkpoints were tested. Its general decision stage follows Kev's method and data, since Kev had no official 2B checkpoint for this run.
+
+| Model | Micro accuracy | Macro-average accuracy | Macro-average balanced accuracy |
+|---|---:|---:|---:|
+| SecJev-0.8B | 85.03% | 90.34% | 88.00% |
+| **SecJev-2B** | **86.48%** | **92.98%** | **90.31%** |
+
+On the clean original Kev suites, SecJev-2B scores **84.50%** on decision-v7 and **75.91%** on transfer-v4. See the [14-task results and all three checkpoints](evaluation/secjev2b/README.md), [2B training recipe](training/secjev2b/README.md), and [inference instructions](INFERENCE.md#secjev-2b).
+
 ## Next steps
 
-- Train and evaluate the 2B, 4B, 9B, and 27B models.
+- Train and evaluate the 4B, 9B, and 27B models.
 - Add inference speed, memory measurements, and deployment instructions.
 
 ## Acknowledgments
