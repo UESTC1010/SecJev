@@ -1,5 +1,7 @@
 <div align="center">
 
+**SecJev-4B is available:** [weights and code, v1.2.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0).
+
 # SecJev
 
 **Jev-like System One decision models for security**
@@ -18,8 +20,9 @@ SecJev-2B is available in [v1.1.0](https://github.com/UESTC1010/SecJev/releases/
 |---|---|
 | [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | Trained LoRA weights, decision head, calibration and tokenizer |
 | [SecJev-2B](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
+| [SecJev-4B](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-4B-v1.2.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
 | [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | All 170,185 questions, four splits and source metadata |
-| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-code-v1.1.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
+| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-code-v1.2.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
 
 ## Models
 
@@ -27,7 +30,7 @@ SecJev-2B is available in [v1.1.0](https://github.com/UESTC1010/SecJev/releases/
 |---|---:|---|
 | **SecJev-0.8B** | 0.8B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
 | **SecJev-2B** | 2B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0) |
-| SecJev-4B | 4B | Planned |
+| **SecJev-4B** | 4B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0) |
 | SecJev-9B | 9B | Planned |
 | SecJev-27B | 27B | Planned |
 
@@ -175,9 +178,21 @@ The 2B release uses the same SecJev-Corpus split. Epoch 3 was selected on develo
 
 On the clean original Kev suites, SecJev-2B scores **84.50%** on decision-v7 and **75.91%** on transfer-v4. See the [14-task results and all three checkpoints](evaluation/secjev2b/README.md), [2B training recipe](training/secjev2b/README.md), and [inference instructions](INFERENCE.md#secjev-2b).
 
+### SecJev-4B
+
+The 4B model starts from official Kev-4B and trains for three epochs on the same SecJev-Corpus split. Full development selected epoch 3.
+
+| Model | Micro accuracy | Macro-task accuracy | Macro-task balanced accuracy |
+|---|---:|---:|---:|
+| SecJev-0.8B | 85.03% | 90.34% | 88.00% |
+| SecJev-2B | 86.48% | 92.98% | 90.31% |
+| **SecJev-4B** | **88.01%** | **94.51%** | **92.42%** |
+
+On original Kev clean suites, decision-v7 scores **86.58%** (original 87.08%) and transfer-v4 **83.84%** (original 83.69%). [14-task results and all checkpoints](evaluation/secjev4b/README.md) · [Training code](training/secjev4b/README.md) · [Inference](INFERENCE.md#secjev-4b).
+
 ## Next steps
 
-- Train and evaluate the 4B, 9B, and 27B models.
+- Train and evaluate the 9B and 27B models.
 - Add inference speed, memory measurements, and deployment instructions.
 
 ## Acknowledgments

@@ -14,5 +14,11 @@
     "published": true,
     "selected_epoch": 3,
     "release_url": "https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0"
+  },
+  "secjev_4b": {
+    "version": "1.2.0",
+    "published": true,
+    "selected_epoch": 3,
+    "release_url": "https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0"
   }
 }

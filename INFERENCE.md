@@ -47,3 +47,15 @@ python SecJev-2B/infer.py --model ./SecJev-2B --base "$SECJEV_WORK/base" --reque
 Install `requirements.txt` first. Use `--device cpu` for CPU inference. The archive contains actual trained LoRA weights and a decision head, not the multi-gigabyte Qwen backbone. Bootstrap downloads `Qwen/Qwen3.5-2B-Base` at revision `b1485b2fa6dfa1287294f269f5fb618e03d52d7c`. The released temperature (1.2923921937) is applied automatically. No training dataset is required for inference.
 
 For the hand-written certificate example, the released 2B checkpoint returned `accept` in the CPU smoke test, although the stated policy requires `reject`. The package includes the actual `example-output.json`. This example demonstrates the request format; use the per-task evaluation to assess model performance.
+
+## SecJev-4B
+
+Download and unpack [SecJev-4B v1.2.0](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-4B-v1.2.0.tar.gz). Install its requirements, then:
+
+```bash
+export SECJEV_WORK="$PWD/secjev-4b-work"
+python SecJev-4B/bootstrap.py --inference-only
+python SecJev-4B/infer.py --model ./SecJev-4B --base "$SECJEV_WORK/base" --request SecJev-4B/examples/certificate.json --device cuda
+```
+
+The package contains actual trained LoRA weights, the FP32 decision head, tokenizer, temperature and inference code. The pinned Qwen3.5-4B-Base backbone is downloaded separately. FP32 inference was tested on an RTX 3090 24GB. CPU inference is available with `--device cpu`. The included certificate example predicts `reject`; see `example-output.json` for the actual response. This example verifies the interface, not general accuracy.

@@ -1,5 +1,7 @@
 <div align="center">
 
+**SecJev-4B 已发布：**[模型权重与代码 v1.2.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0)。
+
 # SecJev
 
 **面向安全决策的 Jev-like System One 模型**
@@ -18,8 +20,9 @@ SecJev-2B 已发布在 [v1.1.0](https://github.com/UESTC1010/SecJev/releases/tag
 |---|---|
 | [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和分词器 |
 | [SecJev-2B](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和推理入口 |
+| [SecJev-4B](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-4B-v1.2.0.tar.gz) | 训练好的 LoRA 权重、决策头、校准参数和推理入口 |
 | [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | 全部 170,185 道题、四个数据划分和来源信息 |
-| [代码](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-code-v1.1.0.tar.gz) | 推理、三轮训练、检查点选择、校准和评估 |
+| [代码](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-code-v1.2.0.tar.gz) | 推理、三轮训练、检查点选择、校准和评估 |
 
 ## 模型
 
@@ -27,7 +30,7 @@ SecJev-2B 已发布在 [v1.1.0](https://github.com/UESTC1010/SecJev/releases/tag
 |---|---:|---|
 | **SecJev-0.8B** | 0.8B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
 | **SecJev-2B** | 2B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0) |
-| SecJev-4B | 4B | 计划中 |
+| **SecJev-4B** | 4B | [已发布](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0) |
 | SecJev-9B | 9B | 计划中 |
 | SecJev-27B | 27B | 计划中 |
 
@@ -188,3 +191,16 @@ SecJev 基于 [Kev](https://github.com/jaredpalmer/kev) 的决策模型实现和
 ## 使用协议
 
 模型、数据和代码的使用与分发，请遵守 [SecJev 使用与分发协议 v1.0](LICENSE.zh-CN.md)（[英文](LICENSE)）及相应的上游条款。例如，ToN-IoT 数据用于商用需要另行取得作者许可。具体条款见协议和[来源说明](SOURCES.md)。
+
+### SecJev-4B
+
+4B 基于官方 Kev-4B，在相同的 SecJev-Corpus 上训练三轮，完整验证集选中第 3 轮。
+
+| 模型 | 总准确率 | 任务宏平均准确率 | 任务宏平均平衡准确率 |
+|---|---:|---:|---:|
+| SecJev-0.8B | 85.03% | 90.34% | 88.00% |
+| SecJev-2B | 86.48% | 92.98% | 90.31% |
+| **SecJev-4B** | **88.01%** | **94.51%** | **92.42%** |
+
+原始 Kev 通用测试 clean 子集：decision-v7 **86.58%**（原版 87.08%），transfer-v4 **83.84%**（原版 83.69%）。[14 项任务与三个 checkpoint 的完整结果](evaluation/secjev4b/README.zh-CN.md) · [训练代码](training/secjev4b/README.md) · [推理说明](INFERENCE.md#secjev-4b)。
+

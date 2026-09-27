@@ -11,3 +11,7 @@ SecJev-0.8B adapts the LoRA parameters and pointer decision head of Kev-0.8B.
 SecJev-2B starts from [Qwen3.5-2B-Base](https://huggingface.co/Qwen/Qwen3.5-2B-Base) at `b1485b2fa6dfa1287294f269f5fb618e03d52d7c`. We train its LoRA and decision head with the same Kev source, decision-v7 and the dates/unknowable supplement, then SecJev-Corpus. It does not use an official Kev-2B initialization. The pinned general-data source is Kev `30c619b0527501cfdd448cb6eb9887e2af454603` and Kev suites `a88f56db5341397299137cb68775c2ea6e3f68cb`.
 
 The inference implementation and training loss use pinned Kev source. SecJev adds security adaptation, batching, the training/evaluation workflow, and the security corpus. See SecJev-Corpus/SOURCES.md for data attribution and source-specific conditions. Dataset terms are not replaced by the code license.
+
+## SecJev-4B
+
+Initialized from jaredpalmer/kev-4b@485ace8703592fcf405488b262449990824cfed1 on Qwen/Qwen3.5-4B-Base@1001bb4d826a52d1f399e183466143f4da7b741b, then adapted for three epochs on SecJev-Corpus v1.0.0. Existing SecJev and upstream terms remain applicable.

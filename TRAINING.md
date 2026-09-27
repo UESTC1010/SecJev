@@ -90,3 +90,7 @@ The corpus splits were inspected during construction, so this is a held-out rese
 ## SecJev-2B
 
 The 2B model uses its own Kev-style general-decision stage followed by the same three-epoch security recipe. See [training/secjev2b](training/secjev2b/README.md) for the pinned inputs, runnable commands and nine-GPU evaluation.
+
+## SecJev-4B
+
+See [training/secjev4b](training/secjev4b/README.md) for the official Kev-4B warm start, three-epoch nine-GPU recipe and complete evaluation.
