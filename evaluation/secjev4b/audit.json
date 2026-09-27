@@ -1,0 +1,118 @@
+{
+  "splits": {
+    "epoch-1/development": {
+      "questions": 14912,
+      "accuracy": 0.8959898068669528,
+      "macro_task_accuracy": 0.9262877786032517,
+      "macro_task_balanced_accuracy": 0.9021513315229265
+    },
+    "epoch-2/development": {
+      "questions": 14912,
+      "accuracy": 0.9046405579399142,
+      "macro_task_accuracy": 0.9354480356736271,
+      "macro_task_balanced_accuracy": 0.9112880126164279
+    },
+    "epoch-3/development": {
+      "questions": 14912,
+      "accuracy": 0.9075912017167382,
+      "macro_task_accuracy": 0.9379621229396502,
+      "macro_task_balanced_accuracy": 0.9185689774676984
+    },
+    "epoch-1/calibration": {
+      "questions": 14821,
+      "accuracy": 0.910802240064773,
+      "macro_task_accuracy": 0.9243611377541778,
+      "macro_task_balanced_accuracy": 0.8966212134669761
+    },
+    "epoch-2/calibration": {
+      "questions": 14821,
+      "accuracy": 0.9218676202685379,
+      "macro_task_accuracy": 0.9347961786371293,
+      "macro_task_balanced_accuracy": 0.9089808629491994
+    },
+    "epoch-3/calibration": {
+      "questions": 14821,
+      "accuracy": 0.9313811483705553,
+      "macro_task_accuracy": 0.9407031795465964,
+      "macro_task_balanced_accuracy": 0.9191604101516704
+    },
+    "epoch-1/test": {
+      "questions": 21634,
+      "accuracy": 0.8587870943884626,
+      "macro_task_accuracy": 0.9337570392580401,
+      "macro_task_balanced_accuracy": 0.9073790312675484
+    },
+    "epoch-2/test": {
+      "questions": 21634,
+      "accuracy": 0.8712212258482019,
+      "macro_task_accuracy": 0.9414975177781386,
+      "macro_task_balanced_accuracy": 0.9169354318963098
+    },
+    "epoch-3/test": {
+      "questions": 21634,
+      "accuracy": 0.8801423684940372,
+      "macro_task_accuracy": 0.9450619006663278,
+      "macro_task_balanced_accuracy": 0.9242156493985225
+    },
+    "kev-4b/test": {
+      "questions": 21634,
+      "accuracy": 0.5048996949246556,
+      "macro_task_accuracy": 0.6787694400132314,
+      "macro_task_balanced_accuracy": 0.6716227368384962
+    }
+  },
+  "general": {
+    "kev-4b/decision-v7": {
+      "all_questions": 1440,
+      "clean_questions": 1200,
+      "accuracy": 0.8708333333333333
+    },
+    "epoch-1/decision-v7": {
+      "all_questions": 1440,
+      "clean_questions": 1200,
+      "accuracy": 0.8666666666666667
+    },
+    "epoch-2/decision-v7": {
+      "all_questions": 1440,
+      "clean_questions": 1200,
+      "accuracy": 0.865
+    },
+    "epoch-3/decision-v7": {
+      "all_questions": 1440,
+      "clean_questions": 1200,
+      "accuracy": 0.8658333333333333
+    },
+    "kev-4b/transfer-v4": {
+      "all_questions": 764,
+      "clean_questions": 656,
+      "accuracy": 0.836890243902439
+    },
+    "epoch-1/transfer-v4": {
+      "all_questions": 764,
+      "clean_questions": 656,
+      "accuracy": 0.8384146341463414
+    },
+    "epoch-2/transfer-v4": {
+      "all_questions": 764,
+      "clean_questions": 656,
+      "accuracy": 0.836890243902439
+    },
+    "epoch-3/transfer-v4": {
+      "all_questions": 764,
+      "clean_questions": 656,
+      "accuracy": 0.8384146341463414
+    }
+  },
+  "checks": [
+    "unique question counts and identical labels",
+    "all shard exit0 and complete logs",
+    "merged rows equal raw shard outputs",
+    "recomputed accuracy and 14-task macro/balanced metrics",
+    "general clean counts and original request identities",
+    "development-only selection",
+    "all completion markers"
+  ],
+  "pass_all": true,
+  "selected_epoch": 3,
+  "test_used_for_selection": false
+}
