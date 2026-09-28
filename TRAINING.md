@@ -94,3 +94,7 @@ The 2B model uses its own Kev-style general-decision stage followed by the same 
 ## SecJev-4B
 
 See [training/secjev4b](training/secjev4b/README.md) for the official Kev-4B warm start, three-epoch nine-GPU recipe and complete evaluation.
+
+## SecJev-9B
+
+See [training/secjev9b](training/secjev9b/README.md) for the official Kev-9B warm start, three epochs on nine GPUs, and complete evaluation.

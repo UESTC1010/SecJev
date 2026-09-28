@@ -12,9 +12,11 @@ def main():
     parser.add_argument('--request', required=True, type=pathlib.Path)
     parser.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
     parser.add_argument('--base', help='Optional local copy of the pinned Qwen backbone')
+    parser.add_argument('--dtype', choices=['auto', 'float32', 'bfloat16'], default='auto', help='auto: BF16 backbone for 9B, FP32 for earlier models; adapter/head stay FP32')
     args = parser.parse_args()
     request = SystemOneRequest.model_validate(json.loads(args.request.read_text()))
     checkpoint = Checkpoint(args.model)
+    dtype = torch.bfloat16 if args.dtype == 'bfloat16' or (args.dtype == 'auto' and '9b' in checkpoint.meta.base.lower()) else torch.float32
     if args.base:
         checkpoint.meta.base = args.base
         checkpoint.meta.base_revision = None
@@ -23,7 +25,21 @@ def main():
     torch.backends.cudnn.allow_tf32 = False
     torch.backends.cuda.enable_flash_sdp(False)
     torch.backends.cuda.enable_mem_efficient_sdp(False)
-    tokenizer, model = checkpoint.load(args.device, LoadOptions(dtype=torch.float32, merge=False, attn='sdpa'))
+    tokenizer, model = checkpoint.load(args.device, LoadOptions(dtype=dtype, merge=False, attn='sdpa'))
+    if dtype == torch.bfloat16:
+        from peft import load_peft_weights, set_peft_model_state_dict, get_peft_model_state_dict
+        for name, parameter in model.lm.named_parameters():
+            if 'lora_' in name:
+                parameter.data = parameter.data.float()
+        weights = load_peft_weights(checkpoint.path, device='cpu')
+        assert set(weights) == set(get_peft_model_state_dict(model.lm))
+        set_peft_model_state_dict(model.lm, weights)
+        loaded = get_peft_model_state_dict(model.lm)
+        assert all(torch.equal(loaded[k].detach().cpu(), v.float()) for k, v in weights.items())
+        assert all(p.dtype == torch.float32 for n, p in model.lm.named_parameters() if 'lora_' in n)
+        assert all(p.dtype == torch.float32 for p in model.head.parameters())
+        del weights, loaded
+    model.eval()
     record, metadata = to_record(request)
     encoded = model.encode(tokenizer, record, max_state=8192, max_branch=8192, strict=True)
     from kev.model import rows_of
@@ -40,6 +56,7 @@ def main():
         torch.cuda.synchronize()
     result = {
         'model': args.model,
+        'precision': ('BF16 backbone, FP32 LoRA/head' if dtype == torch.bfloat16 else 'FP32'),
         'answers': to_answers(probabilities, metadata),
         'probabilities': {m['id']: dict(zip(m['keys'], p)) for m, p in zip(metadata, probabilities)},
         'temperature': model.head.temperature,

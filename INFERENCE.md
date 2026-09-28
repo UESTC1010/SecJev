@@ -59,3 +59,16 @@ python SecJev-4B/infer.py --model ./SecJev-4B --base "$SECJEV_WORK/base" --reque
 ```
 
 The package contains actual trained LoRA weights, the FP32 decision head, tokenizer, temperature and inference code. The pinned Qwen3.5-4B-Base backbone is downloaded separately. FP32 inference was tested on an RTX 3090 24GB. CPU inference is available with `--device cpu`. The included certificate example predicts `reject`; see `example-output.json` for the actual response. This example verifies the interface, not general accuracy.
+
+## SecJev-9B
+
+Unpack [SecJev-9B v1.3.0](https://github.com/UESTC1010/SecJev/releases/download/v1.3.0/SecJev-9B-v1.3.0.tar.gz), then:
+
+```bash
+python -m pip install -r SecJev-9B/requirements.txt
+export SECJEV_WORK="$PWD/secjev-9b-work"
+python SecJev-9B/bootstrap.py --inference-only
+python SecJev-9B/infer.py --model ./SecJev-9B --base "$SECJEV_WORK/base" --request SecJev-9B/examples/certificate.json --device cuda
+```
+
+The package includes trained LoRA weights, FP32 decision head, calibration, tokenizer and inference code. Bootstrap downloads the pinned Qwen3.5-9B-Base backbone separately. The default `--dtype auto` uses BF16 for the 9B backbone and restores the original FP32 adapter tensors after loading. The head stays FP32. This is the evaluated, unmerged precision path; earlier model sizes retain FP32 defaults. A 24GB RTX 3090 was used for packaging checks. Long requests or larger batches may need more memory. The actual certificate-example output and six-case development parity check are included in the model package.

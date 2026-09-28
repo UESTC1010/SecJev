@@ -1,6 +1,6 @@
 <div align="center">
 
-**SecJev-4B is available:** [weights and code, v1.2.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0).
+**SecJev-9B is available:** [weights and code, v1.3.0](https://github.com/UESTC1010/SecJev/releases/tag/v1.3.0).
 
 # SecJev
 
@@ -21,8 +21,9 @@ SecJev-2B is available in [v1.1.0](https://github.com/UESTC1010/SecJev/releases/
 | [SecJev-0.8B](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-0.8B-v1.0.0.tar.gz) | Trained LoRA weights, decision head, calibration and tokenizer |
 | [SecJev-2B](https://github.com/UESTC1010/SecJev/releases/download/v1.1.0/SecJev-2B-v1.1.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
 | [SecJev-4B](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-4B-v1.2.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
+| [SecJev-9B](https://github.com/UESTC1010/SecJev/releases/download/v1.3.0/SecJev-9B-v1.3.0.tar.gz) | Trained LoRA, decision head, calibration and inference entry point |
 | [SecJev-Corpus](https://github.com/UESTC1010/SecJev/releases/download/v1.0.0/SecJev-Corpus-v1.0.0.tar.gz) | All 170,185 questions, four splits and source metadata |
-| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.2.0/SecJev-code-v1.2.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
+| [Code](https://github.com/UESTC1010/SecJev/releases/download/v1.3.0/SecJev-code-v1.3.0.tar.gz) | Inference, three-epoch training, selection, calibration and evaluation |
 
 ## Models
 
@@ -31,7 +32,7 @@ SecJev-2B is available in [v1.1.0](https://github.com/UESTC1010/SecJev/releases/
 | **SecJev-0.8B** | 0.8B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.0.0) |
 | **SecJev-2B** | 2B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.1.0) |
 | **SecJev-4B** | 4B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.2.0) |
-| SecJev-9B | 9B | Planned |
+| **SecJev-9B** | 9B | [Available](https://github.com/UESTC1010/SecJev/releases/tag/v1.3.0) |
 | SecJev-27B | 27B | Planned |
 
 The 0.8B package contains a LoRA adapter, decision head, and calibration parameters. It requires the Qwen3.5-0.8B-Base backbone. See [TRAINING.md](TRAINING.md) for the training recipe.
@@ -190,9 +191,22 @@ The 4B model starts from official Kev-4B and trains for three epochs on the same
 
 On original Kev clean suites, decision-v7 scores **86.58%** (original 87.08%) and transfer-v4 **83.84%** (original 83.69%). [14-task results and all checkpoints](evaluation/secjev4b/README.md) · [Training code](training/secjev4b/README.md) · [Inference](INFERENCE.md#secjev-4b).
 
+### SecJev-9B
+
+The 9B release starts from official Kev-9B and trains for three epochs. Development selected epoch 3. It uses the same 21,634-question, 14-task SecJev-Corpus test split.
+
+| Model | Micro accuracy | Macro-task accuracy | Macro-task balanced accuracy |
+|---|---:|---:|---:|
+| SecJev-4B | 88.01% | 94.51% | 92.42% |
+| **SecJev-9B** | **88.11%** | **94.51%** | **92.19%** |
+
+Security scores are close to 4B in this run; the larger model does not bring a clear gain. On Kev clean suites, 9B scores **87.33%** on decision-v7 (original 87.50%) and **84.76%** on transfer-v4 (original 85.06%). Inference uses a BF16 backbone and the original FP32 LoRA/head.
+
+[Per-task results and all three checkpoints](evaluation/secjev9b/README.md) · [Training code](training/secjev9b/README.md) · [Inference](INFERENCE.md#secjev-9b).
+
 ## Next steps
 
-- Train and evaluate the 9B and 27B models.
+- Train and evaluate the 27B model.
 - Add inference speed, memory measurements, and deployment instructions.
 
 ## Acknowledgments

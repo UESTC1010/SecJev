@@ -22,3 +22,7 @@ SecJev-2B trains its own LoRA/head from the pinned Qwen2B backbone with Kev's de
 ## SecJev-4B
 
 Initialized from jaredpalmer/kev-4b@485ace8703592fcf405488b262449990824cfed1 on Qwen/Qwen3.5-4B-Base@1001bb4d826a52d1f399e183466143f4da7b741b, then adapted for three epochs on SecJev-Corpus v1.0.0. Existing SecJev and upstream terms remain applicable.
+
+## SecJev-9B
+
+Initialized from jaredpalmer/kev-9b@2629c06a5aeb0feb3b9783bafed17ed8f39ecf5c on Qwen/Qwen3.5-9B-Base@68c46c4b3498877f3ef123c856ecfde50c39f404, then trained for three epochs on SecJev-Corpus v1.0.0. The existing SecJev agreement and applicable upstream terms continue to apply.
