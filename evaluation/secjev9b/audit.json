@@ -1,0 +1,637 @@
+{
+  "security": {
+    "epoch-1-development": {
+      "questions": 14912,
+      "accuracy": 0.8954533261802575,
+      "macro_task_accuracy": 0.9282929896147138,
+      "macro_task_balanced_accuracy": 0.9014159933334852
+    },
+    "epoch-1-calibration": {
+      "questions": 14821,
+      "accuracy": 0.9041900006747183,
+      "macro_task_accuracy": 0.9243164697277472,
+      "macro_task_balanced_accuracy": 0.890998477250689
+    },
+    "epoch-1-test": {
+      "questions": 21634,
+      "accuracy": 0.861791624295091,
+      "macro_task_accuracy": 0.934919695356586,
+      "macro_task_balanced_accuracy": 0.906779617384783
+    },
+    "epoch-2-development": {
+      "questions": 14912,
+      "accuracy": 0.9060488197424893,
+      "macro_task_accuracy": 0.9386185604324382,
+      "macro_task_balanced_accuracy": 0.9154388564305237
+    },
+    "epoch-2-calibration": {
+      "questions": 14821,
+      "accuracy": 0.9291545779637002,
+      "macro_task_accuracy": 0.9429849094904278,
+      "macro_task_balanced_accuracy": 0.9170097309467075
+    },
+    "epoch-2-test": {
+      "questions": 21634,
+      "accuracy": 0.8718221318295276,
+      "macro_task_accuracy": 0.940831132350716,
+      "macro_task_balanced_accuracy": 0.9126729392566488
+    },
+    "epoch-3-development": {
+      "questions": 14912,
+      "accuracy": 0.9098041845493562,
+      "macro_task_accuracy": 0.9401536774060569,
+      "macro_task_balanced_accuracy": 0.9221606094373902
+    },
+    "epoch-3-calibration": {
+      "questions": 14821,
+      "accuracy": 0.9367788948114162,
+      "macro_task_accuracy": 0.9467135338436746,
+      "macro_task_balanced_accuracy": 0.9262201683987744
+    },
+    "epoch-3-test": {
+      "questions": 21634,
+      "accuracy": 0.8811130627715633,
+      "macro_task_accuracy": 0.94510899800023,
+      "macro_task_balanced_accuracy": 0.9219071350776311
+    },
+    "kev-9b-test": {
+      "questions": 21634,
+      "accuracy": 0.50869002496071,
+      "macro_task_accuracy": 0.6982168937373293,
+      "macro_task_balanced_accuracy": 0.7035584219932633
+    }
+  },
+  "general": {
+    "epoch-1-decision-v7": {
+      "records": 1176,
+      "questions": 1440,
+      "clean_questions": 1200,
+      "clean_correct": 1051,
+      "accuracy": 0.8758333333333334,
+      "identical_benchmark_request_pairs": [
+        [
+          "mnli/validation_matched/9313",
+          "mnli/validation_matched/9313/permuted"
+        ],
+        [
+          "mnli/validation_matched/2667",
+          "mnli/validation_matched/2667/permuted"
+        ],
+        [
+          "mnli/validation_matched/5582",
+          "mnli/validation_matched/5582/permuted"
+        ],
+        [
+          "mnli/validation_matched/9110",
+          "mnli/validation_matched/9110/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b/permuted"
+        ]
+      ]
+    },
+    "epoch-1-transfer-v4": {
+      "records": 764,
+      "questions": 764,
+      "clean_questions": 656,
+      "clean_correct": 555,
+      "accuracy": 0.8460365853658537,
+      "identical_benchmark_request_pairs": [
+        [
+          "sciq/test/965",
+          "sciq/test/965/permuted"
+        ],
+        [
+          "composition/v3-locked/final_combination/0/relevant/a",
+          "composition/v3-locked/final_combination/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/1/relevant/a",
+          "composition/v3-locked/final_combination/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/2/relevant/a",
+          "composition/v3-locked/final_combination/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/3/relevant/a",
+          "composition/v3-locked/final_combination/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/4/relevant/a",
+          "composition/v3-locked/final_combination/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/5/relevant/a",
+          "composition/v3-locked/final_combination/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/6/relevant/a",
+          "composition/v3-locked/final_combination/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/7/relevant/a",
+          "composition/v3-locked/final_combination/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/0/relevant/a",
+          "composition/v3-locked/final_negation/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/1/relevant/a",
+          "composition/v3-locked/final_negation/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/2/relevant/a",
+          "composition/v3-locked/final_negation/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/3/relevant/a",
+          "composition/v3-locked/final_negation/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/4/relevant/a",
+          "composition/v3-locked/final_negation/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/5/relevant/a",
+          "composition/v3-locked/final_negation/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/6/relevant/a",
+          "composition/v3-locked/final_negation/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/7/relevant/a",
+          "composition/v3-locked/final_negation/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/0/relevant/a",
+          "composition/v3-locked/final_exception/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/1/relevant/a",
+          "composition/v3-locked/final_exception/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/2/relevant/a",
+          "composition/v3-locked/final_exception/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/3/relevant/a",
+          "composition/v3-locked/final_exception/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/4/relevant/a",
+          "composition/v3-locked/final_exception/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/5/relevant/a",
+          "composition/v3-locked/final_exception/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/6/relevant/a",
+          "composition/v3-locked/final_exception/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/7/relevant/a",
+          "composition/v3-locked/final_exception/7/irrelevant/a"
+        ]
+      ]
+    },
+    "epoch-2-decision-v7": {
+      "records": 1176,
+      "questions": 1440,
+      "clean_questions": 1200,
+      "clean_correct": 1049,
+      "accuracy": 0.8741666666666666,
+      "identical_benchmark_request_pairs": [
+        [
+          "mnli/validation_matched/9313",
+          "mnli/validation_matched/9313/permuted"
+        ],
+        [
+          "mnli/validation_matched/2667",
+          "mnli/validation_matched/2667/permuted"
+        ],
+        [
+          "mnli/validation_matched/5582",
+          "mnli/validation_matched/5582/permuted"
+        ],
+        [
+          "mnli/validation_matched/9110",
+          "mnli/validation_matched/9110/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b/permuted"
+        ]
+      ]
+    },
+    "epoch-2-transfer-v4": {
+      "records": 764,
+      "questions": 764,
+      "clean_questions": 656,
+      "clean_correct": 555,
+      "accuracy": 0.8460365853658537,
+      "identical_benchmark_request_pairs": [
+        [
+          "sciq/test/965",
+          "sciq/test/965/permuted"
+        ],
+        [
+          "composition/v3-locked/final_combination/0/relevant/a",
+          "composition/v3-locked/final_combination/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/1/relevant/a",
+          "composition/v3-locked/final_combination/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/2/relevant/a",
+          "composition/v3-locked/final_combination/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/3/relevant/a",
+          "composition/v3-locked/final_combination/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/4/relevant/a",
+          "composition/v3-locked/final_combination/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/5/relevant/a",
+          "composition/v3-locked/final_combination/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/6/relevant/a",
+          "composition/v3-locked/final_combination/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/7/relevant/a",
+          "composition/v3-locked/final_combination/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/0/relevant/a",
+          "composition/v3-locked/final_negation/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/1/relevant/a",
+          "composition/v3-locked/final_negation/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/2/relevant/a",
+          "composition/v3-locked/final_negation/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/3/relevant/a",
+          "composition/v3-locked/final_negation/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/4/relevant/a",
+          "composition/v3-locked/final_negation/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/5/relevant/a",
+          "composition/v3-locked/final_negation/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/6/relevant/a",
+          "composition/v3-locked/final_negation/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/7/relevant/a",
+          "composition/v3-locked/final_negation/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/0/relevant/a",
+          "composition/v3-locked/final_exception/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/1/relevant/a",
+          "composition/v3-locked/final_exception/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/2/relevant/a",
+          "composition/v3-locked/final_exception/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/3/relevant/a",
+          "composition/v3-locked/final_exception/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/4/relevant/a",
+          "composition/v3-locked/final_exception/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/5/relevant/a",
+          "composition/v3-locked/final_exception/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/6/relevant/a",
+          "composition/v3-locked/final_exception/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/7/relevant/a",
+          "composition/v3-locked/final_exception/7/irrelevant/a"
+        ]
+      ]
+    },
+    "epoch-3-decision-v7": {
+      "records": 1176,
+      "questions": 1440,
+      "clean_questions": 1200,
+      "clean_correct": 1048,
+      "accuracy": 0.8733333333333333,
+      "identical_benchmark_request_pairs": [
+        [
+          "mnli/validation_matched/9313",
+          "mnli/validation_matched/9313/permuted"
+        ],
+        [
+          "mnli/validation_matched/2667",
+          "mnli/validation_matched/2667/permuted"
+        ],
+        [
+          "mnli/validation_matched/5582",
+          "mnli/validation_matched/5582/permuted"
+        ],
+        [
+          "mnli/validation_matched/9110",
+          "mnli/validation_matched/9110/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b/permuted"
+        ]
+      ]
+    },
+    "epoch-3-transfer-v4": {
+      "records": 764,
+      "questions": 764,
+      "clean_questions": 656,
+      "clean_correct": 556,
+      "accuracy": 0.8475609756097561,
+      "identical_benchmark_request_pairs": [
+        [
+          "sciq/test/965",
+          "sciq/test/965/permuted"
+        ],
+        [
+          "composition/v3-locked/final_combination/0/relevant/a",
+          "composition/v3-locked/final_combination/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/1/relevant/a",
+          "composition/v3-locked/final_combination/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/2/relevant/a",
+          "composition/v3-locked/final_combination/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/3/relevant/a",
+          "composition/v3-locked/final_combination/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/4/relevant/a",
+          "composition/v3-locked/final_combination/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/5/relevant/a",
+          "composition/v3-locked/final_combination/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/6/relevant/a",
+          "composition/v3-locked/final_combination/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/7/relevant/a",
+          "composition/v3-locked/final_combination/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/0/relevant/a",
+          "composition/v3-locked/final_negation/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/1/relevant/a",
+          "composition/v3-locked/final_negation/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/2/relevant/a",
+          "composition/v3-locked/final_negation/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/3/relevant/a",
+          "composition/v3-locked/final_negation/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/4/relevant/a",
+          "composition/v3-locked/final_negation/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/5/relevant/a",
+          "composition/v3-locked/final_negation/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/6/relevant/a",
+          "composition/v3-locked/final_negation/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/7/relevant/a",
+          "composition/v3-locked/final_negation/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/0/relevant/a",
+          "composition/v3-locked/final_exception/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/1/relevant/a",
+          "composition/v3-locked/final_exception/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/2/relevant/a",
+          "composition/v3-locked/final_exception/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/3/relevant/a",
+          "composition/v3-locked/final_exception/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/4/relevant/a",
+          "composition/v3-locked/final_exception/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/5/relevant/a",
+          "composition/v3-locked/final_exception/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/6/relevant/a",
+          "composition/v3-locked/final_exception/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/7/relevant/a",
+          "composition/v3-locked/final_exception/7/irrelevant/a"
+        ]
+      ]
+    },
+    "kev-9b-decision-v7": {
+      "records": 1176,
+      "questions": 1440,
+      "clean_questions": 1200,
+      "clean_correct": 1050,
+      "accuracy": 0.875,
+      "identical_benchmark_request_pairs": [
+        [
+          "mnli/validation_matched/9313",
+          "mnli/validation_matched/9313/permuted"
+        ],
+        [
+          "mnli/validation_matched/2667",
+          "mnli/validation_matched/2667/permuted"
+        ],
+        [
+          "mnli/validation_matched/5582",
+          "mnli/validation_matched/5582/permuted"
+        ],
+        [
+          "mnli/validation_matched/9110",
+          "mnli/validation_matched/9110/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0001/b/permuted"
+        ],
+        [
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b",
+          "contrastive/spend_threshold/20260919-eval-spend_threshold-0005/b/permuted"
+        ]
+      ]
+    },
+    "kev-9b-transfer-v4": {
+      "records": 764,
+      "questions": 764,
+      "clean_questions": 656,
+      "clean_correct": 558,
+      "accuracy": 0.850609756097561,
+      "identical_benchmark_request_pairs": [
+        [
+          "sciq/test/965",
+          "sciq/test/965/permuted"
+        ],
+        [
+          "composition/v3-locked/final_combination/0/relevant/a",
+          "composition/v3-locked/final_combination/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/1/relevant/a",
+          "composition/v3-locked/final_combination/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/2/relevant/a",
+          "composition/v3-locked/final_combination/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/3/relevant/a",
+          "composition/v3-locked/final_combination/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/4/relevant/a",
+          "composition/v3-locked/final_combination/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/5/relevant/a",
+          "composition/v3-locked/final_combination/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/6/relevant/a",
+          "composition/v3-locked/final_combination/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_combination/7/relevant/a",
+          "composition/v3-locked/final_combination/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/0/relevant/a",
+          "composition/v3-locked/final_negation/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/1/relevant/a",
+          "composition/v3-locked/final_negation/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/2/relevant/a",
+          "composition/v3-locked/final_negation/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/3/relevant/a",
+          "composition/v3-locked/final_negation/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/4/relevant/a",
+          "composition/v3-locked/final_negation/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/5/relevant/a",
+          "composition/v3-locked/final_negation/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/6/relevant/a",
+          "composition/v3-locked/final_negation/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_negation/7/relevant/a",
+          "composition/v3-locked/final_negation/7/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/0/relevant/a",
+          "composition/v3-locked/final_exception/0/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/1/relevant/a",
+          "composition/v3-locked/final_exception/1/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/2/relevant/a",
+          "composition/v3-locked/final_exception/2/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/3/relevant/a",
+          "composition/v3-locked/final_exception/3/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/4/relevant/a",
+          "composition/v3-locked/final_exception/4/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/5/relevant/a",
+          "composition/v3-locked/final_exception/5/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/6/relevant/a",
+          "composition/v3-locked/final_exception/6/irrelevant/a"
+        ],
+        [
+          "composition/v3-locked/final_exception/7/relevant/a",
+          "composition/v3-locked/final_exception/7/irrelevant/a"
+        ]
+      ]
+    }
+  },
+  "all_checks_passed": true,
+  "selected_epoch": 3,
+  "checked_at": "2026-09-28T04:27:59.463723+08:00"
+}
